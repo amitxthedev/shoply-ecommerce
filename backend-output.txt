@@ -1,0 +1,67 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.shoply:backend >-------------------------
+[INFO] Building Shoply Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.3.5:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 4 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] skip non existing resourceDirectory C:\Users\amitr\Downloads\e-com\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.3.5:run (default-cli) < test-compile @ backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.3.5:run (default-cli) @ backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2026-11-05T18:50:32.772+05:30  INFO 20768 --- [  restartedMain] com.shoply.ShoplyApplication             : Starting ShoplyApplication using Java 17.0.20.1 with PID 20768 (C:\Users\amitr\Downloads\e-com\backend\target\classes started by amitr in C:\Users\amitr\Downloads\e-com\backend)
+2026-11-05T18:50:32.774+05:30 DEBUG 20768 --- [  restartedMain] com.shoply.ShoplyApplication             : Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-11-05T18:50:32.776+05:30  INFO 20768 --- [  restartedMain] com.shoply.ShoplyApplication             : No active profile set, falling back to 1 default profile: "local"
+2026-11-05T18:50:32.885+05:30  INFO 20768 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-11-05T18:50:32.886+05:30  INFO 20768 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-11-05T18:50:35.393+05:30  INFO 20768 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-05T18:50:35.774+05:30  INFO 20768 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 350 ms. Found 6 JPA repository interfaces.
+2026-11-05T18:50:41.255+05:30  INFO 20768 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8093 (http)
+2026-11-05T18:50:41.315+05:30  INFO 20768 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-05T18:50:41.316+05:30  INFO 20768 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-11-05T18:50:41.491+05:30  INFO 20768 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-05T18:50:41.497+05:30  INFO 20768 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8608 ms
+2026-11-05T18:50:42.373+05:30  INFO 20768 --- [  restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/shoply_db (MySQL 8.0)
+2026-11-05T18:50:42.483+05:30  INFO 20768 --- [  restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.050s)
+2026-11-05T18:50:42.504+05:30  INFO 20768 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema `shoply_db`: 1
+2026-11-05T18:50:42.510+05:30  INFO 20768 --- [  restartedMain] o.f.core.internal.command.DbMigrate      : Schema `shoply_db` is up to date. No migration necessary.
+2026-11-05T18:50:42.618+05:30  INFO 20768 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-05T18:50:42.996+05:30  INFO 20768 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-11-05T18:50:43.135+05:30  INFO 20768 --- [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-05T18:50:43.885+05:30  INFO 20768 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-05T18:50:43.954+05:30  INFO 20768 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-05T18:50:43.987+05:30  INFO 20768 --- [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74adb2fe
+2026-11-05T18:50:43.990+05:30  INFO 20768 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-05T18:50:44.122+05:30  WARN 20768 --- [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-05T18:50:49.554+05:30  INFO 20768 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-05T18:50:49.621+05:30  INFO 20768 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-05T18:50:50.895+05:30  INFO 20768 --- [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-05T18:50:52.003+05:30  INFO 20768 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-11-05T18:50:52.096+05:30  INFO 20768 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8093 (http) with context path '/'
+2026-11-05T18:50:52.119+05:30  INFO 20768 --- [  restartedMain] com.shoply.ShoplyApplication             : Started ShoplyApplication in 20.11 seconds (process running for 21.115)
