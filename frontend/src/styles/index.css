@@ -1,0 +1,5 @@
+/* Shoply stylesheet entry — Tailwind v4 (single version, no v3 config mixed) */
+@import "tailwindcss";
+@import "animate.css";
+@import "./tokens.css";
+@import "./base.css";

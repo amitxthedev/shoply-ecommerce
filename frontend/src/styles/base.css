@@ -1,0 +1,28 @@
+/*
+ * Base layer — minimal element defaults only (all component styling uses
+ * Tailwind utilities; see UI_UX_DESIGN_SPEC §7.1 universal rules).
+ */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-surface);
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+
+  /* Focus: 2px primary outline, 2px offset (A11Y-02).
+     Green surfaces override with accent-500 at the component level. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary-700);
+    outline-offset: 2px;
+  }
+}

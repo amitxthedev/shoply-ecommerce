@@ -1,0 +1,213 @@
+/*
+ * Shoply design tokens — the single source of truth for the design system.
+ * Seeded from docs/UI_UX_DESIGN_SPEC.md §4 (colors, sampled from reference A),
+ * §5 (typography scale), §6 (spacing/grid) and §13 (breakpoints).
+ * Tailwind v4 CSS-first theme: colors, families and breakpoints below generate
+ * the matching utilities (e.g. --color-primary-700 -> bg-primary-700).
+ */
+
+@theme {
+  /* ---------- Brand (UI spec §4.1) ---------- */
+  --color-primary-700: #06571d; /* primary actions, bars, footer, active states */
+  --color-primary-800: #044516; /* hover */
+  --color-primary-900: #033311; /* active/pressed */
+  --color-primary-100: #e3efe7; /* subtle selected fills */
+  --color-accent-500: #f2b808; /* yellow accent — dashes, indicators (never text on light) */
+  --color-accent-600: #d9a307; /* accent hover */
+
+  /* ---------- Surfaces, text, lines (UI spec §4.1) ---------- */
+  --color-surface: #ffffff;
+  --color-surface-light: #f5f6f6; /* section bands, image plates, input fill */
+  --color-ink: #0a0a0a; /* headings, primary text */
+  --color-body-copy: #404040; /* body copy */
+  --color-muted: #6e6e6e; /* labels, meta, helper text */
+  --color-line: #e5e5e5; /* hairline dividers (tables/lists/forms only) */
+  --color-line-strong: #c9c9c9; /* control outlines */
+  --color-skeleton: #ededed; /* loading skeleton fill (§7.5) */
+
+  /* ---------- Semantic (UI spec §4.2) ---------- */
+  --color-error-700: #b42318;
+  --color-error-100: #fdecea;
+
+  /* ---------- Typography families (UI spec §5.1) ---------- */
+  --font-display: "Poppins", system-ui, sans-serif; /* headings, buttons, eyebrows */
+  --font-sans: "Inter", system-ui, sans-serif; /* body, UI, nav, inputs */
+
+  /* ---------- Breakpoints (UI spec §13 — mobile-first, custom scale) ----------
+   * XS 375 = base styles · SM 768 = tablet portrait · MD 1024 = tablet landscape
+   * LG 1440 = desktop composition · XL 1920 = capped container (never stretches) */
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-xl: 1920px;
+  --breakpoint-2xl: initial; /* not part of the spec scale — removed to avoid confusion */
+
+  /* ---------- Effects — the ONLY two shadows the spec allows (§7.1 rule 3) ---------- */
+  --shadow-modal: 0 16px 40px rgba(10, 10, 10, 0.18);
+  --shadow-toast: 0 8px 24px rgba(10, 10, 10, 0.12);
+
+  /* ---------- Motion — skeleton shimmer, 1.4 s (§7.5); opacity-based so no
+     gradient is ever painted (rule 14) ---------- */
+  --animate-shimmer: shimmer 1.4s ease-in-out infinite;
+
+  @keyframes shimmer {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
+}
+
+/*
+ * ---------- Type scale (UI spec §5.2) ----------
+ * Responsive font sizes are custom @utility blocks, NOT --text-* theme
+ * variables: Tailwind v4 has no responsive font-size modifier (only
+ * --line-height / --letter-spacing suffixes exist, so --text-h2--sm would be
+ * silently ignored). Each token ships one utility that scales
+ * mobile (base) -> tablet (>=768) -> desktop (>=1440) exactly per the spec
+ * table (RESP-07: token-driven — usage sites stay a single class).
+ * Family (font-display/font-sans) and weight (font-bold etc.) remain on
+ * standard Tailwind utilities.
+ *
+ * Note: the spec table assigns tablet sizes to 768-1023 and desktop to >=1440;
+ * the 1024-1439 gap keeps tablet sizes so the desktop jump lands at the
+ * design reference width (LG).
+ */
+
+@utility text-h1 {
+  font-size: 36px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+
+  @media (width >= 768px) {
+    font-size: 48px;
+  }
+
+  @media (width >= 1440px) {
+    font-size: 64px;
+  }
+}
+
+@utility text-h2 {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+
+  @media (width >= 768px) {
+    font-size: 32px;
+  }
+
+  @media (width >= 1440px) {
+    font-size: 40px;
+  }
+}
+
+@utility text-h3 {
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+
+  @media (width >= 768px) {
+    font-size: 24px;
+  }
+
+  @media (width >= 1440px) {
+    font-size: 28px;
+  }
+}
+
+@utility text-h4 {
+  font-size: 17px;
+  line-height: 1.3;
+
+  @media (width >= 768px) {
+    font-size: 18px;
+  }
+
+  @media (width >= 1440px) {
+    font-size: 20px;
+  }
+}
+
+@utility text-body-lg {
+  font-size: 16px;
+  line-height: 1.6;
+
+  @media (width >= 768px) {
+    font-size: 17px;
+  }
+
+  @media (width >= 1440px) {
+    font-size: 18px;
+  }
+}
+
+@utility text-body {
+  font-size: 15px; /* Body/Base — 15 mobile, 16 from tablet */
+  line-height: 1.6;
+
+  @media (width >= 768px) {
+    font-size: 16px;
+  }
+}
+
+@utility text-body-sm {
+  font-size: 13px; /* Body/Small — 13 mobile, 14 from tablet */
+  line-height: 1.5;
+
+  @media (width >= 768px) {
+    font-size: 14px;
+  }
+}
+
+@utility text-label {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@utility text-eyebrow {
+  font-size: 12px; /* Poppins 600 uppercase — 13 from tablet */
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+
+  @media (width >= 768px) {
+    font-size: 13px;
+  }
+}
+
+@utility text-micro {
+  font-size: 12px; /* badges */
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+@utility text-price-card {
+  font-size: 16px; /* Inter 600 — 17 from tablet */
+  line-height: 1.3;
+
+  @media (width >= 768px) {
+    font-size: 17px;
+  }
+}
+
+@utility text-price-hero {
+  font-size: 22px; /* PDP price — 24 tablet, 28 desktop */
+  line-height: 1.2;
+
+  @media (width >= 768px) {
+    font-size: 24px;
+  }
+
+  @media (width >= 1440px) {
+    font-size: 28px;
+  }
+}
+
+/*
+ * ---------- Radius policy (UI spec §7.1 DS-DEC-01 + task rule) ----------
+ * Cards, panels, inputs, badges, buttons: SQUARE (0 px) — applied in
+ * components (rounded-none). Circles/pills are shapes or explicitly opted in.
+ */
