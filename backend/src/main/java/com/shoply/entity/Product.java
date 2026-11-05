@@ -55,6 +55,13 @@ public class Product {
     @Column(name = "version", nullable = false)
     private int version = 0;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private java.util.List<ProductVariant> variants;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OrderBy("position ASC")
+    private java.util.List<ProductImage> images;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
@@ -153,6 +160,22 @@ public class Product {
 
     public int getVersion() {
         return version;
+    }
+
+    public java.util.List<ProductVariant> getVariants() {
+        return variants;
+    }
+
+    public void setVariants(java.util.List<ProductVariant> variants) {
+        this.variants = variants;
+    }
+
+    public java.util.List<ProductImage> getImages() {
+        return images;
+    }
+
+    public void setImages(java.util.List<ProductImage> images) {
+        this.images = images;
     }
 
     public LocalDateTime getCreatedAt() {
