@@ -1,0 +1,43 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend build output
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+
+# Backend (Maven)
+backend/target/
+backend/.env
+backend/.env.local
+
+# Maven wrapper (keep these tracked)
+# !backend/mvnw
+# !backend/mvnw.cmd
+# !backend/.mvn/wrapper/maven-wrapper.jar
+# !backend/.mvn/wrapper/maven-wrapper.properties
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker
+uploads/
+
+# Logs
+*.log
+logs/
